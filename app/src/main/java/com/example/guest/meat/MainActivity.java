@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mContactIcon.setTypeface(contactIcon);
 
         mFindRecipeButton.setOnClickListener(this);
+        mAboutIcon.setOnClickListener(this);
+        mContactIcon.setOnClickListener(this);
+        mUserIcon.setOnClickListener(this);
     }
 
     @Override
@@ -55,6 +58,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("typeOfMeat", typeOfMeat);
                 startActivity(intent);
             }
+        } else if (v == mAboutIcon) {
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(intent);
+        } else if (v == mContactIcon) {
+            Intent intent = new Intent(MainActivity.this, ContactActivity.class);
+            startActivity(intent);
+        } else if (v == mUserIcon) {
+            Intent intent = new Intent(MainActivity.this, UserLoginActivity.class);
+            startActivity(intent);
         }
     }
 }

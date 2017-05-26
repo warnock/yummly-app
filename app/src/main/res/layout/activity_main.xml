@@ -31,7 +31,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/typeOfMeat"
         android:layout_alignStart="@+id/typeOfMeat"
-        android:layout_marginTop="20dpgit status"/>
+        android:layout_marginTop="20dp"/>
 
     <EditText
         android:layout_width="wrap_content"
