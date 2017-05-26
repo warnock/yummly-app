@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.findRecipeButton) Button mFindRecipeButton;
     @Bind(R.id.typeOfMeat) EditText mTypeOfMeat;
     @Bind(R.id.meatLogo) TextView mMeatLogo;
+    @Bind(R.id.userIcon) TextView mUserIcon;
+    @Bind(R.id.aboutIcon) TextView mAboutIcon;
+    @Bind(R.id.contactIcon) TextView mContactIcon;
 
 
     @Override
@@ -29,13 +32,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Typeface logoFont = Typeface.createFromAsset(getAssets(), "fonts/EricaOne-Regular.ttf");
         mMeatLogo.setTypeface(logoFont);
 
+        Typeface userIcon = Typeface.createFromAsset(getAssets(), "fonts/fontawesome-webfont.ttf");
+        mUserIcon.setTypeface(userIcon);
+
+        Typeface aboutIcon = Typeface.createFromAsset(getAssets(), "fonts/fontawesome-webfont.ttf");
+        mAboutIcon.setTypeface(aboutIcon);
+
+        Typeface contactIcon = Typeface.createFromAsset(getAssets(), "fonts/fontawesome-webfont.ttf");
+        mContactIcon.setTypeface(contactIcon);
+
         mFindRecipeButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if(v == mFindRecipeButton) {
-            if(mTypeOfMeat.getText().toString().length() == 0 ) {
+            if(mTypeOfMeat.getText().toString().trim().length() == 0 ) {
                 mTypeOfMeat.setError("Give me some MEAT!");
             } else {
                 String typeOfMeat = mTypeOfMeat.getText().toString();

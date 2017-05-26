@@ -1,0 +1,5 @@
+<resources>
+    <string name="fa_user_circle_o">&#xf2be;</string>
+    <string name="fa_info_circle">&#xf05a;</string>
+    <string name="fa_envelope_open">&#xf2b6;</string>
+</resources>

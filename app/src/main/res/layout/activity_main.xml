@@ -61,4 +61,30 @@
         android:textAllCaps="false"
         android:layout_marginBottom="10dp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/fa_user_circle_o"
+        android:id="@+id/userIcon"
+        android:textSize="45sp"
+        android:textColor="@color/colorAccent"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fa_info_circle"
+        android:id="@+id/aboutIcon"
+        android:textSize="45sp"
+        android:textColor="@color/colorAccent"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="@string/fa_envelope_open"
+        android:id="@+id/contactIcon"
+        android:textSize="45sp"
+        android:textColor="@color/colorAccent"/>
+
 </RelativeLayout>
