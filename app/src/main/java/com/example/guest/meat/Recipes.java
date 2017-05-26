@@ -22,13 +22,17 @@ public class Recipes extends AppCompatActivity {
             "Spicy pork", "Yum Yum beef", "Cheeseburger Meatloaf", "Best Steak evvvver", "Chicken Chicken", "Duck, Duck. Goose",
             "Spicy pork", "Yum Yum beef", "Cheeseburger Meatloaf"};
 
+    private String[] reviews = new String[] {"Great", "5 freaking stars!",
+            "It's okay", "really is the best Steak evvvver", "so gross", "What a clever name and dish!",
+            "Spicy!", "So good, two thumbs up!", "Sounds gross but it's really good", "really is the best Steak evvvver", "so gross", "What a clever name and dish!", "Spicy!", "So good, two thumbs up!", "Sounds gross but it's really good" };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes);
         ButterKnife.bind(this);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, recipes);
+        MyRecipesArrayAdapter adapter = new MyRecipesArrayAdapter(this, android.R.layout.simple_list_item_1, recipes, reviews);
         mListView.setAdapter(adapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
