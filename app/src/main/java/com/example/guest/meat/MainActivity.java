@@ -14,7 +14,7 @@ import android.graphics.Typeface;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.findRecipeButton) Button mFindRecipeButton;
     @Bind(R.id.typeOfMeat) EditText mTypeOfMeat;
     @Bind(R.id.meatLogo) TextView mMeatLogo;
@@ -29,16 +29,16 @@ public class MainActivity extends AppCompatActivity {
         Typeface logoFont = Typeface.createFromAsset(getAssets(), "fonts/EricaOne-Regular.ttf");
         mMeatLogo.setTypeface(logoFont);
 
-        mFindRecipeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String typeOfMeat = mTypeOfMeat.getText().toString();
-                Intent intent = new Intent(MainActivity.this, Recipes.class);
-                intent.putExtra("typeOfMeat", typeOfMeat);
-                startActivity(intent);
+        mFindRecipeButton.setOnClickListener(this);
+    }
 
-
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        if(v == mFindRecipeButton) {
+            String typeOfMeat = mTypeOfMeat.getText().toString();
+            Intent intent = new Intent(MainActivity.this, Recipes.class);
+            intent.putExtra("typeOfMeat", typeOfMeat);
+            startActivity(intent);
+        }
     }
 }
