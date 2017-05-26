@@ -31,4 +31,33 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationEditText"
+        android:layout_marginBottom="12dp"
+        android:padding="5dp"
+        android:hint="ENTER MEAT PRODUCT"
+        android:background="@color/offWhite"
+        android:layout_above="@+id/findRecipeButton"
+        android:layout_alignLeft="@+id/findRecipeButton"
+        android:layout_alignStart="@+id/findRecipeButton"
+        android:layout_alignRight="@+id/findRecipeButton"
+        android:layout_alignEnd="@+id/findRecipeButton"
+        android:textAlignment="center"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/findRecipeButton"
+        android:text="Get Cooking"
+        android:textSize="30dp"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:layout_marginLeft="30dp"
+        android:textAllCaps="false"
+        android:layout_marginBottom="10dp"/>
+
 </RelativeLayout>
