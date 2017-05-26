@@ -21,7 +21,7 @@
         android:id="@+id/meatLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Meat"
+        android:text="MEAT"
         android:textColor="@android:color/white"
         android:textSize="75dp"
         app:layout_constraintBottom_toBottomOf="parent"

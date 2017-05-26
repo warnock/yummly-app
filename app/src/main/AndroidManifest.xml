@@ -23,9 +23,21 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.meat.Recipes" />
         </activity>
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".ContactActivity" />
-        <activity android:name=".UserLoginActivity"></activity>
+        <activity android:name=".AboutActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.meat.AboutActivity" />
+        </activity>
+        <activity android:name=".ContactActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.meat.ContactActivity " />
+        </activity>
+        <activity android:name=".UserLoginActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.meat.UserLoginActivity" />
+        </activity>
     </application>
 
 </manifest>
