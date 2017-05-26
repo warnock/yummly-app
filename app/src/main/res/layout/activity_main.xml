@@ -21,16 +21,17 @@
         android:id="@+id/meatLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="101dp"
         android:text="Meat"
         android:textColor="@android:color/white"
-        android:textSize="50dp"
+        android:textSize="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/typeOfMeat"
+        android:layout_alignStart="@+id/typeOfMeat"
+        android:layout_marginTop="20dpgit status"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -62,29 +63,38 @@
         android:layout_marginBottom="10dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:text="@string/fa_user_circle_o"
         android:id="@+id/userIcon"
-        android:textSize="45sp"
-        android:textColor="@color/colorAccent"/>
+        android:textSize="22sp"
+        android:textColor="@color/colorAccent"
+        android:layout_alignTop="@+id/contactIcon"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:text="@string/fa_info_circle"
         android:id="@+id/aboutIcon"
-        android:textSize="45sp"
-        android:textColor="@color/colorAccent"/>
+        android:textSize="25sp"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/userIcon"
+        android:layout_toStartOf="@+id/userIcon"
+        android:layout_marginTop="8dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
-        android:gravity="right"
         android:text="@string/fa_envelope_open"
         android:id="@+id/contactIcon"
-        android:textSize="45sp"
-        android:textColor="@color/colorAccent"/>
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/aboutIcon"
+        android:layout_toStartOf="@+id/aboutIcon"
+        android:layout_marginTop="10dp"/>
 
 </RelativeLayout>
