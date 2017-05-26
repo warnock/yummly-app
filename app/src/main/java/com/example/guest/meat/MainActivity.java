@@ -35,10 +35,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v == mFindRecipeButton) {
-            String typeOfMeat = mTypeOfMeat.getText().toString();
-            Intent intent = new Intent(MainActivity.this, Recipes.class);
-            intent.putExtra("typeOfMeat", typeOfMeat);
-            startActivity(intent);
+            if(mTypeOfMeat.getText().toString().length() == 0 ) {
+                mTypeOfMeat.setError("Give me some MEAT!");
+            } else {
+                String typeOfMeat = mTypeOfMeat.getText().toString();
+                Intent intent = new Intent(MainActivity.this, Recipes.class);
+                intent.putExtra("typeOfMeat", typeOfMeat);
+                startActivity(intent);
+            }
         }
     }
 }
