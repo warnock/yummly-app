@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MEAT"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -31,7 +31,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/typeOfMeat"
         android:layout_alignStart="@+id/typeOfMeat"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp" />
 
     <EditText
         android:layout_width="wrap_content"
