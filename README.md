@@ -8,7 +8,7 @@ Current Version: 1.0
 
 ## Description
 
-####  
+#### This application will allows users to use the Yummly api to search recipes. A user will also be able to log in and star  thier favorite recipies.
 
 ## Setup
 Clone this repository:
@@ -29,6 +29,12 @@ _Please contact Megan if any questions: megandwarnock@gmail.com_
 
 ## Known Bugs
 None at this time
+
+## In process
+* content on about, contact, and user activities
+* MEAT logo
+* MEAT tagline on main activity - something like "these aren't the cows your looking for"
+* add yummly api to search for meat recipes
 
 ## Technologies Used
 

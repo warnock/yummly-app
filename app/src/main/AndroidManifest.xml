@@ -31,7 +31,7 @@
         <activity android:name=".ContactActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.meat.ContactActivity " />
+                android:value="com.example.guest.meat.ContactActivity" />
         </activity>
         <activity android:name=".UserLoginActivity">
             <meta-data
