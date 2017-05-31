@@ -3,6 +3,7 @@ package com.example.guest.meat;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,10 +11,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 public class Recipes extends AppCompatActivity {
+    public static final String TAG = Recipes.class.getSimpleName();
+
     @Bind(R.id.meatText) TextView mMeatText;
     @Bind(R.id.listView) ListView mListView;
 
@@ -46,5 +54,28 @@ public class Recipes extends AppCompatActivity {
         Intent intent = getIntent();
         String typeOfMeat = intent.getStringExtra("typeOfMeat");
         mMeatText.setText(typeOfMeat + ", it's whats for dinner.");
+
+        getRecipes(typeOfMeat);
+    }
+
+    private void getRecipes(String typeOfMeat) {
+        final YummlyService yummlyService = new YummlyService();
+        yummlyService.findRecipes(typeOfMeat, new Callback() {
+
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try {
+                    String jsonData = response.body().string();
+                    Log.v(TAG, jsonData);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }
