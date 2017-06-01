@@ -7,17 +7,17 @@ public class Recipe {
     private String mRecipeName;
     private ArrayList<String> mIngredients = new ArrayList<>();
     private String mImageUrl;
-    private int mRating;
+    private String mRating;
     private String mSource;
-    private String mCuisine;
 
-    public Recipe(String recipeName, ArrayList<String> ingredients, String imageUrl, int rating, String source, String cuisine) {
+
+    public Recipe(String recipeName, ArrayList<String> ingredients, String imageUrl, String rating, String source) {
         this.mRecipeName = recipeName;
         this.mIngredients = ingredients;
         this.mImageUrl = imageUrl;
         this.mRating = rating;
         this.mSource = source;
-        this.mCuisine = cuisine;
+
     }
 
     public String getRecipeName() {
@@ -32,7 +32,7 @@ public class Recipe {
         return  mImageUrl;
     }
 
-    public int getRating() {
+    public String getRating() {
         return mRating;
     }
 
@@ -40,8 +40,5 @@ public class Recipe {
         return mSource;
     }
 
-    public String getCuisine() {
-        return mCuisine;
-    }
 
 }
