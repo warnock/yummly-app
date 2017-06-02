@@ -3,6 +3,8 @@ package com.example.guest.meat.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.guest.meat.R;
+import com.example.guest.meat.adapters.RecipeListAdapter;
 import com.example.guest.meat.models.Recipe;
 import com.example.guest.meat.services.YummlyService;
 
@@ -25,8 +28,11 @@ import okhttp3.Response;
 public class Recipes extends AppCompatActivity {
     public static final String TAG = Recipes.class.getSimpleName();
 
-    @Bind(R.id.meatText) TextView mMeatText;
-    @Bind(R.id.listView) ListView mListView;
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    private RecipeListAdapter mAdapter;
+
+//    @Bind(R.id.meatText) TextView mMeatText;
+//    @Bind(R.id.listView) ListView mListView;
 
 //    private String[] recipes = new String[] {"Beef chow fun", "Tarragon Chicken",
 //            "Lamb", "Best Steak evvvver", "Chicken Chicken", "Duck, Duck. Goose",
@@ -48,17 +54,17 @@ public class Recipes extends AppCompatActivity {
 //        MyRecipesArrayAdapter adapter = new MyRecipesArrayAdapter(this, android.R.layout.simple_list_item_1, recipes, reviews);
 //        mListView.setAdapter(adapter);
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String recipe = ((TextView)view).getText().toString();
+//        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                String recipe = ((TextView)view).getText().toString();
 //                Toast.makeText(Recipes.this, "Recipe coming soon!", Toast.LENGTH_LONG).show();
-            }
-        });
+//            }
+//        });
 
         Intent intent = getIntent();
         String typeOfMeat = intent.getStringExtra("typeOfMeat");
-        mMeatText.setText(typeOfMeat + ", it's whats for dinner.");
+//        mMeatText.setText(typeOfMeat + ", it's whats for dinner.");
 
         getRecipes(typeOfMeat);
     }
@@ -77,15 +83,22 @@ public class Recipes extends AppCompatActivity {
                 mRecipes = yummlyService.processResults(response);
 
                 Recipes.this.runOnUiThread(new Runnable() {
+
                     @Override
                     public void run() {
-                        String[] recipeNames = new String[mRecipes.size()];
-                        for (int i = 0; i < recipeNames.length; i++) {
-                            recipeNames[i] = mRecipes.get(i).getRecipeName();
-                        }
-
-                        ArrayAdapter adapter = new ArrayAdapter(Recipes.this, android.R.layout.simple_list_item_1, recipeNames);
-                        mListView.setAdapter(adapter);
+                        mAdapter = new RecipeListAdapter(getApplicationContext(), mRecipes);
+                        mRecyclerView.setAdapter(mAdapter);
+                        RecyclerView.LayoutManager layoutManager =
+                                new LinearLayoutManager(Recipes.this);
+                        mRecyclerView.setLayoutManager(layoutManager);
+                        mRecyclerView.setHasFixedSize(true);
+//                        String[] recipeNames = new String[mRecipes.size()];
+//                        for (int i = 0; i < recipeNames.length; i++) {
+//                            recipeNames[i] = mRecipes.get(i).getRecipeName();
+//                        }
+//
+//                        ArrayAdapter adapter = new ArrayAdapter(Recipes.this, android.R.layout.simple_list_item_1, recipeNames);
+//                        mListView.setAdapter(adapter);
                     }
                 });
             }
