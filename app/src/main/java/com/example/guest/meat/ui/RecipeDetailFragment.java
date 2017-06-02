@@ -26,6 +26,7 @@ public class RecipeDetailFragment extends Fragment {
     @Bind(R.id.ratingTextView) TextView mRatingLabel;
     @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
 
+
     private Recipe mRecipe;
 
     public static RecipeDetailFragment newInstance(Recipe recipe) {
@@ -51,8 +52,8 @@ public class RecipeDetailFragment extends Fragment {
         Picasso.with(view.getContext()).load(mRecipe.getImageUrl()).into(mImageLabel);
 
         mNameLabel.setText(mRecipe.getRecipeName());
-        mRatingLabel.setText(mRecipe.getRating());
-        mWebsiteLabel.setText(mRecipe.getId());
+        mRatingLabel.setText("Rating: " + mRecipe.getRating() + "/5");
+        mWebsiteLabel.setText("http://www.yummly.co/recipes/" + mRecipe.getId());
 
         return view;
     }
