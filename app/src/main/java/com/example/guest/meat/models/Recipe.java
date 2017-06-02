@@ -1,8 +1,11 @@
 package com.example.guest.meat.models;
 
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 
+
+@Parcel
 public class Recipe {
     private String mRecipeName;
     private ArrayList<String> mIngredients = new ArrayList<>();
@@ -11,7 +14,7 @@ public class Recipe {
     private String mSource;
     private String mId;
 
-
+public Recipe() {}
 
     public Recipe(String recipeName, ArrayList<String> ingredients, String imageUrl, String rating, String source, String id) {
         this.mRecipeName = recipeName;
