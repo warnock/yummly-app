@@ -9,14 +9,16 @@ public class Recipe {
     private String mImageUrl;
     private String mRating;
     private String mSource;
+    private String mId;
 
 
-    public Recipe(String recipeName, ArrayList<String> ingredients, String imageUrl, String rating, String source) {
+    public Recipe(String recipeName, ArrayList<String> ingredients, String imageUrl, String rating, String source, String id) {
         this.mRecipeName = recipeName;
         this.mIngredients = ingredients;
         this.mImageUrl = imageUrl;
         this.mRating = rating;
         this.mSource = source;
+        this.mId = id;
 
     }
 
@@ -40,5 +42,5 @@ public class Recipe {
         return mSource;
     }
 
-
+    public String getId() { return mId; }
 }

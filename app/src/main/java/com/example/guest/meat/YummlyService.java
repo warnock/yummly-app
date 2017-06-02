@@ -68,8 +68,9 @@ public class YummlyService {
                     String imageUrl = recipeJSON.getJSONObject("imageUrlsBySize").getString("90");
                     String rating = recipeJSON.getString("rating");
                     String source = recipeJSON.getString("sourceDisplayName");
+                    String id = recipeJSON.getString("id");
 
-                    Recipe recipe = new Recipe(recipeName, ingredients, imageUrl, rating, source);
+                    Recipe recipe = new Recipe(recipeName, ingredients, imageUrl, rating, source, id);
                         recipes.add(recipe);
 
                 }
