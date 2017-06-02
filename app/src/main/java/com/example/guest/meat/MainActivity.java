@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(mTypeOfMeat.getText().toString().trim().length() == 0 ) {
                 mTypeOfMeat.setError("Give me some MEAT!");
             } else {
-                String typeOfMeat = mTypeOfMeat.getText().toString();
+                String typeOfMeat = mTypeOfMeat.getText().toString().toLowerCase();
                 Intent intent = new Intent(MainActivity.this, Recipes.class);
                 intent.putExtra("typeOfMeat", typeOfMeat);
                 startActivity(intent);
