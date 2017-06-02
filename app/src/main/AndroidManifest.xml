@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,25 +20,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Recipes">
+        <activity android:name=".ui.Recipes">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.meat.Recipes" />
+                android:value="com.example.guest.meat.ui.Recipes" />
         </activity>
-        <activity android:name=".AboutActivity">
+        <activity android:name=".ui.AboutActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.meat.AboutActivity" />
+                android:value="com.example.guest.meat.ui.AboutActivity" />
         </activity>
-        <activity android:name=".ContactActivity">
+        <activity android:name=".ui.ContactActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.meat.ContactActivity" />
+                android:value="com.example.guest.meat.ui.ContactActivity" />
         </activity>
-        <activity android:name=".UserLoginActivity">
+        <activity android:name=".ui.UserLoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.meat.UserLoginActivity" />
+                android:value="com.example.guest.meat.ui.UserLoginActivity" />
         </activity>
     </application>
 

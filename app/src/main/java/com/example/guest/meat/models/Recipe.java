@@ -1,4 +1,4 @@
-package com.example.guest.meat;
+package com.example.guest.meat.models;
 
 
 import java.util.ArrayList;
@@ -10,6 +10,7 @@ public class Recipe {
     private String mRating;
     private String mSource;
     private String mId;
+
 
 
     public Recipe(String recipeName, ArrayList<String> ingredients, String imageUrl, String rating, String source, String id) {
@@ -43,4 +44,6 @@ public class Recipe {
     }
 
     public String getId() { return mId; }
+
+
 }

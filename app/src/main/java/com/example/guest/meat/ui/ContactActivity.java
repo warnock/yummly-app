@@ -1,13 +1,15 @@
-package com.example.guest.meat;
+package com.example.guest.meat.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class UserLoginActivity extends AppCompatActivity {
+import com.example.guest.meat.R;
+
+public class ContactActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_login);
+        setContentView(R.layout.activity_contact);
     }
 }

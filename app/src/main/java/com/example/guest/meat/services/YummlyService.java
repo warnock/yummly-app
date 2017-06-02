@@ -1,7 +1,10 @@
-package com.example.guest.meat;
+package com.example.guest.meat.services;
 
 
 import android.util.Log;
+
+import com.example.guest.meat.Constants;
+import com.example.guest.meat.models.Recipe;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -58,17 +61,19 @@ public class YummlyService {
                     JSONArray ingredientsJSON = recipeJSON.getJSONArray("ingredients");
 
                     for (int y = 0; y < ingredientsJSON.length(); y++) {
-//                        ingredients.add(ingredientsJSON.getJSONArray(y).get(0).toString());
-
                         ingredients.add(ingredientsJSON.get(y).toString());
-
-
                     }
 
                     String imageUrl = recipeJSON.getJSONObject("imageUrlsBySize").getString("90");
                     String rating = recipeJSON.getString("rating");
                     String source = recipeJSON.getString("sourceDisplayName");
                     String id = recipeJSON.getString("id");
+
+//                    ArrayList<String> cuisine = new ArrayList<>();
+//                    JSONArray cuisineJSON = recipeJSON.getJSONObject("attributes").getJSONArray("cuisine");
+//                    for (int c = 0; c < cuisineJSON.length(); c++) {
+//                            cuisine.add(cuisineJSON.get(c).toString());
+//                    }
 
                     Recipe recipe = new Recipe(recipeName, ingredients, imageUrl, rating, source, id);
                         recipes.add(recipe);

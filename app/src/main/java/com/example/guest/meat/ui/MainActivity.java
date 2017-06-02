@@ -1,15 +1,15 @@
-package com.example.guest.meat;
+package com.example.guest.meat.ui;
 
 import android.content.Intent;
-import android.support.constraint.solver.SolverVariable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.graphics.Typeface;
+
+import com.example.guest.meat.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
