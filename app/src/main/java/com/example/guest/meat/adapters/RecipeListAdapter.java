@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.guest.meat.R;
 import com.example.guest.meat.models.Recipe;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -47,7 +48,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
         @Bind(R.id.recipeImageView) ImageView mRecipeImageView;
         @Bind(R.id.recipeNameTextView) TextView mRecipeNameTextView;
         @Bind(R.id.souceTextView) TextView mSourceTextView;
-        @Bind(R.id.ratingTextView) TextView mRatingTextView;
+//        @Bind(R.id.ratingTextView) TextView mRatingTextView;
 
         private Context mContext;
 
@@ -58,9 +59,10 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
         }
 
         public void bindRecipe(Recipe recipe) {
+            Picasso.with(mContext).load(recipe.getImageUrl()).into(mRecipeImageView);
             mRecipeNameTextView.setText(recipe.getRecipeName());
-            mSourceTextView.setText(recipe.getSource());
-            mRatingTextView.setText("Rating: " + recipe.getRating());
+            mSourceTextView.setText("Posted By: " + recipe.getSource());
+//            mRatingTextView.setText("Rating: " + recipe.getRating());
         }
 
     }
