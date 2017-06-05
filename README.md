@@ -34,7 +34,10 @@ None at this time
 * content on about, contact, and user activities
 * MEAT logo
 * MEAT tagline on main activity - something like "these aren't the cows your looking for"
-* add yummly api to search for meat recipes
+* flesh out detailed recipe page and add inplicit intent
+* add paccasso and write method to make images clearer
+* add icons to contact activity
+* set up user input not to take numbers
 
 ## Technologies Used
 
