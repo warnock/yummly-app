@@ -45,6 +45,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.meat.ui.UserLoginActivity" />
         </activity>
+        <activity android:name=".ui.SavedRecipeListActivity"></activity>
     </application>
 
 </manifest>

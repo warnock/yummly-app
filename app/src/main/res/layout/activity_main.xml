@@ -60,7 +60,22 @@
         android:background="@color/colorAccent"
         android:layout_marginLeft="30dp"
         android:textAllCaps="false"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="60dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Saved Recipes"
+        android:id="@+id/savedRecipesButton"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/white"
+        android:visibility="visible"
+        android:textSize="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/findRecipeButton"
+        android:layout_alignStart="@+id/findRecipeButton"
+        android:layout_alignRight="@+id/findRecipeButton"
+        android:layout_alignEnd="@+id/findRecipeButton" />
 
     <TextView
         android:layout_width="30dp"

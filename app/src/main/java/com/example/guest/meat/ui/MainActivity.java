@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.userIcon) TextView mUserIcon;
     @Bind(R.id.aboutIcon) TextView mAboutIcon;
     @Bind(R.id.contactIcon) TextView mContactIcon;
+    @Bind(R.id.savedRecipesButton) Button mSavedRecipesButton;
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAboutIcon.setOnClickListener(this);
         mContactIcon.setOnClickListener(this);
         mUserIcon.setOnClickListener(this);
+        mSavedRecipesButton.setOnClickListener(this);
     }
 
     @Override
@@ -74,6 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (v == mUserIcon) {
             Intent intent = new Intent(MainActivity.this, UserLoginActivity.class);
+            startActivity(intent);
+        } else if (v == mSavedRecipesButton) {
+            Intent intent = new Intent(MainActivity.this, SavedRecipeListActivity.class);
             startActivity(intent);
         }
     }
