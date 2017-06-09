@@ -14,6 +14,7 @@ public class Recipe {
     String rating;
     String source;
     String id;
+    private String pushId;
 
 public Recipe() {}
 
@@ -49,5 +50,7 @@ public Recipe() {}
 
     public String getId() { return id; }
 
-
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
 }

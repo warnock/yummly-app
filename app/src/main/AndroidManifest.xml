@@ -33,7 +33,7 @@
         <activity android:name=".ui.RecipeDetailActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.meat.ui.UserLoginActivity" />
+                android:value="com.example.guest.meat.ui.RecipeDetailActivity" />
         </activity>
         <activity android:name=".ui.SavedRecipeListActivity">
             <meta-data
