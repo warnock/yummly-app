@@ -74,7 +74,7 @@
             android:textSize="25sp"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:text="Don't have an account? Sign up here!"
+            android:text="Sign up here!"
             android:id="@+id/registerTextView"
             android:layout_gravity="center_horizontal"
             android:shadowColor="@color/colorPrimaryDark"/>

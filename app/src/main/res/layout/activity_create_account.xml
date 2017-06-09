@@ -97,10 +97,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:text="Already have an account? Log in here!"
+            android:text="Log in here!"
             android:id="@+id/loginTextView"
             android:layout_gravity="center_horizontal" />
 
