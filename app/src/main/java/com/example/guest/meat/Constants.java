@@ -8,4 +8,5 @@ public class Constants {
     public static final String API_ID_QUERY_PARAMETER = "X-Yummly-App-ID";
     public static final String API_KEY_QUERY_PARAMETER = "X-Yummly-App-Key";
     public static final String SEARCH_QUERY_INGREDIENT = "allowedIngredient[]";
+    public static final String PREFERENCES_LOCATION_KEY = "typeOfMeat";
 }

@@ -1,11 +1,15 @@
 package com.example.guest.meat.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
+import com.example.guest.meat.Constants;
 import com.example.guest.meat.R;
 import com.example.guest.meat.adapters.RecipeListAdapter;
 import com.example.guest.meat.models.Recipe;
@@ -21,6 +25,8 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class RecipeListActivity extends AppCompatActivity {
+    private SharedPreferences mSharedPreferences;
+    private String mRecentAddress;
     public static final String TAG = RecipeListActivity.class.getSimpleName();
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
@@ -39,6 +45,12 @@ public class RecipeListActivity extends AppCompatActivity {
         String typeOfMeat = intent.getStringExtra("typeOfMeat");
 
         getRecipes(typeOfMeat);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+        if (mRecentAddress != null) {
+            getRecipes(mRecentAddress);
+        }
     }
 
     private void getRecipes(String typeOfMeat) {

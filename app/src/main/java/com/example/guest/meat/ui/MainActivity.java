@@ -1,6 +1,8 @@
 package com.example.guest.meat.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.graphics.Typeface;
 
+import com.example.guest.meat.Constants;
 import com.example.guest.meat.R;
 
 import butterknife.Bind;
@@ -22,12 +25,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.aboutIcon) TextView mAboutIcon;
     @Bind(R.id.contactIcon) TextView mContactIcon;
 
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
 
         Typeface logoFont = Typeface.createFromAsset(getAssets(), "fonts/EricaOne-Regular.ttf");
         mMeatLogo.setTypeface(logoFont);
@@ -50,14 +59,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v == mFindRecipeButton) {
-            if(mTypeOfMeat.getText().toString().trim().length() == 0 ) {
-                mTypeOfMeat.setError("Give me some MEAT!");
-            } else {
                 String typeOfMeat = mTypeOfMeat.getText().toString().toLowerCase();
+            if(!(typeOfMeat).equals("")) {
+                addToSharedPreferences(typeOfMeat);
+            }
                 Intent intent = new Intent(MainActivity.this, RecipeListActivity.class);
                 intent.putExtra("typeOfMeat", typeOfMeat);
                 startActivity(intent);
-            }
         } else if (v == mAboutIcon) {
             Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
@@ -68,5 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, UserLoginActivity.class);
             startActivity(intent);
         }
+    }
+
+    private void addToSharedPreferences(String typeOfMeat) {
+        mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, typeOfMeat).apply();
     }
 }

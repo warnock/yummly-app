@@ -50,7 +50,6 @@ public class YummlyService {
             if (response.isSuccessful()) {
                 String jsonData = response.body().string();
 
-                Log.d("jsonData", jsonData);
                 JSONObject yummlyJSON = new JSONObject(jsonData);
                 JSONArray matchesJSON = yummlyJSON.getJSONArray("matches");
                 for (int i = 0; i < matchesJSON.length(); i++) {
@@ -68,12 +67,6 @@ public class YummlyService {
                     String rating = recipeJSON.getString("rating");
                     String source = recipeJSON.getString("sourceDisplayName");
                     String id = recipeJSON.getString("id");
-
-//                    ArrayList<String> cuisine = new ArrayList<>();
-//                    JSONArray cuisineJSON = recipeJSON.getJSONObject("attributes").getJSONArray("cuisine");
-//                    for (int c = 0; c < cuisineJSON.length(); c++) {
-//                            cuisine.add(cuisineJSON.get(c).toString());
-//                    }
 
                     Recipe recipe = new Recipe(recipeName, ingredients, imageUrl, rating, source, id);
                         recipes.add(recipe);
