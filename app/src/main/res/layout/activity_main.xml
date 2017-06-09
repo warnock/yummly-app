@@ -60,7 +60,7 @@
         android:background="@color/colorAccent"
         android:layout_marginLeft="30dp"
         android:textAllCaps="false"
-        android:layout_marginBottom="60dp"/>
+        android:layout_marginBottom="70dp"/>
 
     <Button
         android:layout_width="match_parent"
@@ -75,18 +75,9 @@
         android:layout_alignLeft="@+id/findRecipeButton"
         android:layout_alignStart="@+id/findRecipeButton"
         android:layout_alignRight="@+id/findRecipeButton"
-        android:layout_alignEnd="@+id/findRecipeButton" />
+        android:layout_alignEnd="@+id/findRecipeButton"
+        android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="wrap_content"
-        android:text="@string/fa_user_circle_o"
-        android:id="@+id/userIcon"
-        android:textSize="22sp"
-        android:textColor="@color/colorAccent"
-        android:layout_alignTop="@+id/contactIcon"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="30dp"
@@ -96,8 +87,7 @@
         android:textSize="25sp"
         android:textColor="@color/colorAccent"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/userIcon"
-        android:layout_toStartOf="@+id/userIcon"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="8dp"/>
 
     <TextView
