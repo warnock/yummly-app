@@ -3,50 +3,51 @@ package com.example.guest.meat.models;
 import org.parceler.Parcel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Parcel
 public class Recipe {
-    private String mRecipeName;
-    private ArrayList<String> mIngredients = new ArrayList<>();
-    private String mImageUrl;
-    private String mRating;
-    private String mSource;
-    private String mId;
+    String recipeName;
+    List<String> ingredients = new ArrayList<>();
+    String imageUrl;
+    String rating;
+    String source;
+    String id;
 
 public Recipe() {}
 
     public Recipe(String recipeName, ArrayList<String> ingredients, String imageUrl, String rating, String source, String id) {
-        this.mRecipeName = recipeName;
-        this.mIngredients = ingredients;
-        this.mImageUrl = imageUrl;
-        this.mRating = rating;
-        this.mSource = source;
-        this.mId = id;
+        this.recipeName = recipeName;
+        this.ingredients = ingredients;
+        this.imageUrl = imageUrl;
+        this.rating = rating;
+        this.source = source;
+        this.id = id;
 
     }
 
     public String getRecipeName() {
-        return mRecipeName;
+        return recipeName;
     }
 
-    public ArrayList<String> getIngredients() {
-        return mIngredients;
+    public List<String> getIngredients() {
+        return ingredients;
     }
 
     public String getImageUrl() {
-        return  mImageUrl;
+        return  imageUrl;
     }
 
     public String getRating() {
-        return mRating;
+        return rating;
     }
 
     public String getSource() {
-        return mSource;
+        return source;
     }
 
-    public String getId() { return mId; }
+    public String getId() { return id; }
 
 
 }

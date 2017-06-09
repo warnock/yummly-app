@@ -9,10 +9,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.guest.meat.Constants;
 import com.example.guest.meat.models.Recipe;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -29,6 +34,7 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
     @Bind(R.id.ratingTextView) TextView mRatingLabel;
     @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
     @Bind(R.id.ingredientList) TextView mIngredientList;
+    @Bind(R.id.saveRescipeButton) Button mSaveRecipeButton;
 
 
 
@@ -50,14 +56,6 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
 
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v == mWebsiteLabel) {
-            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.yummly.co/#recipe/" + mRecipe.getId()));
-            startActivity(webIntent);
-        }
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -73,7 +71,24 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
         mIngredientList.setText(android.text.TextUtils.join(", ", mRecipe.getIngredients()));
         mWebsiteLabel.setText("http://www.yummly.co/#recipe/" + mRecipe.getId());
 
+        mSaveRecipeButton.setOnClickListener(this);
+
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mWebsiteLabel) {
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.yummly.co/#recipe/" + mRecipe.getId()));
+            startActivity(webIntent);
+        }
+        else if(v == mSaveRecipeButton) {
+            DatabaseReference recipeRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_RECIPES);
+            recipeRef.push().setValue(mRecipe);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }
