@@ -83,9 +83,9 @@
                     android:drawablePadding="4dp"
                     android:gravity="center"
                     android:text="This recipe will need the following ingredients: "
+                    android:textAlignment="center"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/ingredientList"
@@ -106,9 +106,9 @@
                     android:drawablePadding="4dp"
                     android:gravity="center"
                     android:text="See full Recipe:"
+                    android:textAlignment="center"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/websiteTextView"
