@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,8 +39,6 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
     @Bind(R.id.ingredientList) TextView mIngredientList;
     @Bind(R.id.saveRescipeButton) Button mSaveRecipeButton;
 
-
-
     private Recipe mRecipe;
 
     public static RecipeDetailFragment newInstance(Recipe recipe) {
@@ -54,8 +53,6 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mRecipe = Parcels.unwrap(getArguments().getParcelable("recipe"));
-
-
     }
 
 

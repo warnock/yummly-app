@@ -11,6 +11,7 @@ import com.example.guest.meat.Constants;
 import com.example.guest.meat.R;
 import com.example.guest.meat.models.Recipe;
 import com.example.guest.meat.ui.RecipeDetailActivity;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,8 +25,6 @@ import java.util.ArrayList;
 
 
 public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    private static final int MAX_WIDTH = 200;
-    private static final int MAX_HEIGHT = 200;
 
     View mView;
     Context mContext;
@@ -55,7 +54,7 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
     @Override
     public void onClick(View view) {
         final ArrayList<Recipe> recipes = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_RECIPES);
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_RECIPES).child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
