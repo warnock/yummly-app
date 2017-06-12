@@ -4,7 +4,7 @@
 #### Adroid Application, 5/26/17
 Current Version: 1.0 
 
-
+![screenshot of project running](mainActivity.png)
 
 ## Description
 
