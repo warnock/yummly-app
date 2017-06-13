@@ -4,7 +4,7 @@
 #### Adroid Application, 5/26/17
 Current Version: 1.0 
 
-![MainActivity](/app/src/main/res/raw/mainActivity.png?raw=true "mainActivity")
+![MainActivity](/app/src/main/res/raw/mainactivity.png?raw=true "mainActivity")
 
 ## Description
 
