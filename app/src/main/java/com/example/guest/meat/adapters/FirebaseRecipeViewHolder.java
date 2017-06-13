@@ -25,7 +25,10 @@ import java.util.ArrayList;
 
 
 public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    private static final int MAX_WIDTH = 200;
+    private static final int MAX_HEIGHT = 200;
 
+    public ImageView mRecipeImageView;
     View mView;
     Context mContext;
 
@@ -37,6 +40,7 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
     }
 
     public void bindRecipe(Recipe recipe) {
+        mRecipeImageView = (ImageView) mView.findViewById(R.id.recipeImageView);
         ImageView mRecipeImageView = (ImageView) mView.findViewById(R.id.recipeImageView);
         TextView mRecipeNameTextView = (TextView) mView.findViewById(R.id.recipeNameTextView);
         TextView mSourceTextView = (TextView) mView.findViewById(R.id.sourceTextView);
@@ -44,6 +48,8 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
 
         Picasso.with(mContext)
                 .load(recipe.getImageUrl())
+                .resize(MAX_WIDTH, MAX_HEIGHT)
+                .centerCrop()
                 .into(mRecipeImageView);
 
         mRecipeNameTextView.setText(recipe.getRecipeName());
