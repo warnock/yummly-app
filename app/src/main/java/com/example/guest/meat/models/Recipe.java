@@ -15,6 +15,7 @@ public class Recipe {
     String source;
     String id;
     private String pushId;
+    String index;
 
 public Recipe() {}
 
@@ -25,6 +26,7 @@ public Recipe() {}
         this.rating = rating;
         this.source = source;
         this.id = id;
+        this.index = "not_specified";
 
     }
 
@@ -52,5 +54,13 @@ public Recipe() {}
 
     public void setPushId(String pushId) {
         this.pushId = pushId;
+    }
+
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
     }
 }
