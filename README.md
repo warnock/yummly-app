@@ -24,10 +24,13 @@ Clone this repository:
     * press finish and run the application
 
 This application uses the Yummly API. You will need to sign up to get a Yummly API key and ID at:
-    * `https://developer.yummly.com/`
+
+* `https://developer.yummly.com/`
+
 once you have been given your key and ID you will need to put that information in the gradle.properties file:
-    * YummlyApiKey = "Your API KEY"
-    * YummlyAppId = "Your ID"
+
+* YummlyApiKey = "Your API KEY"
+* YummlyAppId = "Your ID"
 
 You can find more information about uses of the Yummly API here: `https://developer.yummly.com/documentation`
 

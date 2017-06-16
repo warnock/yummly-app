@@ -35,9 +35,9 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
     @Bind(R.id.recipeImageView ) ImageView mImageLabel;
     @Bind(R.id.recipeNameTextView) TextView mNameLabel;
     @Bind(R.id.ratingTextView) TextView mRatingLabel;
-    @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
     @Bind(R.id.ingredientList) TextView mIngredientList;
     @Bind(R.id.saveRescipeButton) Button mSaveRecipeButton;
+    @Bind(R.id.getRecipeButton) Button mGetRecipeButton;
 
     private Recipe mRecipe;
 
@@ -61,27 +61,23 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
         View view = inflater.inflate(R.layout.fragment_recipe_detail, container, false);
         ButterKnife.bind(this, view);
 
-        mWebsiteLabel.setOnClickListener(this);
-
         Picasso.with(view.getContext()).load(mRecipe.getImageUrl()).into(mImageLabel);
 
         mNameLabel.setText(mRecipe.getRecipeName());
         mRatingLabel.setText("Rating: " + mRecipe.getRating() + "/5");
         mIngredientList.setText(android.text.TextUtils.join(", ", mRecipe.getIngredients()));
-        mWebsiteLabel.setText("http://www.yummly.co/#recipe/" + mRecipe.getId());
 
         mSaveRecipeButton.setOnClickListener(this);
-
+        mGetRecipeButton.setOnClickListener(this);
         return view;
     }
 
     @Override
     public void onClick(View v) {
-        if (v == mWebsiteLabel) {
+        if (v == mGetRecipeButton){
             Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.yummly.co/#recipe/" + mRecipe.getId()));
             startActivity(webIntent);
-        }
-        else if(v == mSaveRecipeButton) {
+        } else if(v == mSaveRecipeButton) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             String uid = user.getUid();
 
