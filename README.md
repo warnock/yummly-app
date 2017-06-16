@@ -11,6 +11,7 @@ Current Version: 1.0
 #### This application will allows users to use the Yummly api to search recipes. A user will also be able to log in and star thier favorite recipes.
 
 ## Setup
+
 Clone this repository:
 * git clone `https://github.com/warnock/meat.git`
 * you will need the current version of Adriod Studios to run this application: 
@@ -20,8 +21,15 @@ Clone this repository:
     * a box will pop open and select "Create New Virtual Device"
     * pick device you would like to run a simulation on (app was tested on Nexus 5X)
     * select "Marshmallow" as your sysetme image and click next
-    * push finish and run the application
-    
+    * press finish and run the application
+
+This application uses the Yummly API. You will need to sign up to get a Yummly API key and ID at:
+    * `https://developer.yummly.com/`
+once you have been given your key and ID you will need to put that information in the gradle.properties file:
+    * YummlyApiKey = "Your API KEY"
+    * YummlyAppId = "Your ID"
+
+You can find more information about uses of the Yummly API here: `https://developer.yummly.com/documentation`
 
 ## Support and contact details
 
@@ -30,20 +38,16 @@ _Please contact Megan if any questions: megandwarnock@gmail.com_
 ## Known Bugs
 None at this time
 
-## In process
-* content on about, contact, and user activities
+## Further things to improve app
+
 * MEAT logo
-* MEAT tagline on main activity - something like "these aren't the cows your looking for"
 * add Picasso and write method to make images clearer
-* add icons to contact activity
 * set up user input not to take numbers
 * add if statement if no recipes returned
 
 ## Technologies Used
 
 Andriod Studios
-
-Font Awesome 
 
 Java
 
