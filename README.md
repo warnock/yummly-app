@@ -10,7 +10,7 @@ Current Version: 1.0
 
 ## Description
 
-#### This application will allows users to use the Yummly api to search recipes. A user will also be able to log in and star thier favorite recipes.
+#### This Android application will allows new and repeat users to search for recipes. The app uses the Yummly API to search the users inputted ingredient and pull a list or recipes.  A user will also be able to log in and save their favorite recipes for future use.
 
 ## Setup
 
