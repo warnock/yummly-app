@@ -35,14 +35,14 @@
                 android:id="@+id/ratingTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/recipeNameTextView"
                 android:paddingBottom="10dp"
                 android:paddingRight="10dp"
                 android:text="4.5/5"
                 android:textColor="@color/colorAccent"
-                android:textStyle="bold"
-                android:layout_below="@+id/recipeNameTextView"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/recipeImageView"
@@ -56,13 +56,6 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white">
-
-
-        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -114,27 +107,30 @@
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/websiteTextView"
+                <Button
+                    android:id="@+id/getRecipeButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:drawablePadding="4dp"
-                    android:text="This is the Id"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/linearLayout2"
+                    android:background="@color/colorAccent"
+                    android:text="Recipe Me!"
+                    android:textColor="@android:color/white"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:layout_marginBottom="10dp"/>
+                <Button
+                    android:id="@+id/saveRescipeButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorAccent"
+                    android:text="Save Recipe"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/saveRescipeButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="@color/colorAccent"
-                android:text="Save Recipe"
-                android:textColor="@android:color/white"
-                android:textSize="15sp" />
+
         </RelativeLayout>
     </LinearLayout>
 </FrameLayout>
