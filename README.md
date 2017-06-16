@@ -1,10 +1,12 @@
 # _Meat_
 
-### By Megan Warnock 
+### By Megan Warnock
 #### Adroid Application, 5/26/17
-Current Version: 1.0 
+Current Version: 1.0
 
-![MainActivity](/app/src/main/res/raw/mainactivity.png?raw=true "mainActivity")
+![Meat Recipe Finder: Main Activity](/app/src/main/res/raw/main.png?raw=true "Meat Recipe Finder - Main Activity")
+![Meat Recipe Finder: Recipe List](/app/src/main/res/raw/list.png?raw=true "Meat Recipe Finder - Recipe List")
+![Meat Recipe Finder:  Recipe Detail](/app/src/main/res/raw/detail.png?raw=true "Meat Recipe Finder - Recipe Detail")
 
 ## Description
 
@@ -14,7 +16,7 @@ Current Version: 1.0
 
 Clone this repository:
 * git clone `https://github.com/warnock/meat.git`
-* you will need the current version of Adriod Studios to run this application: 
+* you will need the current version of Adriod Studios to run this application:
     `https://developer.android.com/studio/index.html` (2.3.2 or higher)
 * open project in Adriod Studios
 * to run preview of app select the green play button in the tool bar or click "Run" -> "Run 'app'"
