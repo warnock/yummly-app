@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.findRecipeButton) Button mFindRecipeButton;
     @Bind(R.id.typeOfMeat) EditText mTypeOfMeat;
     @Bind(R.id.meatLogo) TextView mMeatLogo;
-    @Bind(R.id.aboutIcon) TextView mAboutIcon;
-    @Bind(R.id.contactIcon) TextView mContactIcon;
     @Bind(R.id.savedRecipesButton) Button mSavedRecipesButton;
 
     private SharedPreferences mSharedPreferences;
@@ -49,17 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Typeface logoFont = Typeface.createFromAsset(getAssets(), "fonts/EricaOne-Regular.ttf");
         mMeatLogo.setTypeface(logoFont);
 
-
-
-        Typeface aboutIcon = Typeface.createFromAsset(getAssets(), "fonts/fontawesome-webfont.ttf");
-        mAboutIcon.setTypeface(aboutIcon);
-
-        Typeface contactIcon = Typeface.createFromAsset(getAssets(), "fonts/fontawesome-webfont.ttf");
-        mContactIcon.setTypeface(contactIcon);
-
         mFindRecipeButton.setOnClickListener(this);
-        mAboutIcon.setOnClickListener(this);
-        mContactIcon.setOnClickListener(this);
+
         mSavedRecipesButton.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
@@ -100,13 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(MainActivity.this, RecipeListActivity.class);
                 intent.putExtra("typeOfMeat", typeOfMeat);
                 startActivity(intent);
-        } else if (v == mAboutIcon) {
-            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
-            startActivity(intent);
-        } else if (v == mContactIcon) {
-            Intent intent = new Intent(MainActivity.this, ContactActivity.class);
-            startActivity(intent);
-        }  else if (v == mSavedRecipesButton) {
+        }   else if (v == mSavedRecipesButton) {
             Intent intent = new Intent(MainActivity.this, SavedRecipeListActivity.class);
             startActivity(intent);
         }

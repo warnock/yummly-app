@@ -20,16 +20,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.meat.ui.RecipeListActivity" />
         </activity>
-        <activity android:name=".ui.AboutActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.meat.ui.AboutActivity" />
-        </activity>
-        <activity android:name=".ui.ContactActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.meat.ui.ContactActivity" />
-        </activity>
         <activity android:name=".ui.RecipeDetailActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
