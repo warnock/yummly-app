@@ -1,7 +1,7 @@
 # _Meat_
 
 ### By Megan Warnock
-#### Adroid Application, 5/26/17
+#### Android Application, 5/26/17
 Current Version: 1.0
 
 ![Meat Recipe Finder: Main Activity](/app/src/main/res/raw/main.png?raw=true "Meat Recipe Finder - Main Activity")
@@ -10,19 +10,19 @@ Current Version: 1.0
 
 ## Description
 
-#### This Android application will allows new and repeat users to search for recipes. The app uses the Yummly API to search the users inputted ingredient and pull a list or recipes.  A user will also be able to log in and save their favorite recipes for future use.
+#### This Android application will allow new and repeat users to search for recipes. The app uses the Yummly API to search the users inputted ingredient and pull a list or recipes. A user will also be able to log in and save their favorite recipes for future use.
 
 ## Setup
 
 Clone this repository:
 * git clone `https://github.com/warnock/meat.git`
-* you will need the current version of Adriod Studios to run this application:
+* you will need the current version of Andriod Studios to run this application:
     `https://developer.android.com/studio/index.html` (2.3.2 or higher)
-* open project in Adriod Studios
+* open project in Andriod Studios
 * to run preview of app select the green play button in the tool bar or click "Run" -> "Run 'app'"
     * a box will pop open and select "Create New Virtual Device"
     * pick device you would like to run a simulation on (app was tested on Nexus 5X)
-    * select "Marshmallow" as your sysetme image and click next
+    * select "Marshmallow" as your system image and click next
     * press finish and run the application
 
 This application uses the Yummly API. You will need to sign up to get a Yummly API key and ID at:
@@ -46,13 +46,12 @@ None at this time
 ## Further things to improve app
 
 * MEAT logo
-* add Picasso and write method to make images clearer
 * set up user input not to take numbers
-* add if statement if no recipes returned
+* add error checks
 
 ## Technologies Used
 
-Andriod Studios
+Android Studios
 
 Java
 
